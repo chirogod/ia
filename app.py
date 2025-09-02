@@ -19,11 +19,11 @@ model = genai.GenerativeModel('models/gemini-1.5-flash')
 
 # --- Configuración de Flask ---
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "https://salmon-tarsier-696033.hostingersite.com"}})
 
 # --- Consumir endpoints y guardar datos ---
-URL_API_AUTOS = os.getenv("URL_API_AUTOS", "http://localhost:8080/concesionaria/admin/api/api.php")
-URL_API_SUCURSALES = os.getenv("URL_API_AUTOS", "http://localhost:8080/concesionaria/admin/api/sucursales.php")
+URL_API_AUTOS = os.getenv("URL_API_AUTOS")
+URL_API_SUCURSALES = os.getenv("URL_API_SUCURSALES")
 
 def get_vehiculos_from_api():
     try:
