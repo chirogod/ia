@@ -19,7 +19,7 @@ model = genai.GenerativeModel('models/gemini-1.5-flash')
 
 # --- Configuración de Flask ---
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://salmon-tarsier-696033.hostingersite.com"}})
+CORS(app)
 
 # --- Consumir endpoints y guardar datos ---
 URL_API_AUTOS = os.getenv("URL_API_AUTOS")
