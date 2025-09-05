@@ -22,7 +22,7 @@ app = Flask(__name__)
 CORS(app)
 
 # --- Consumir endpoints y guardar datos ---
-URL_API_AUTOS = os.getenv("URL_API_AUTOS")
+URL_API_AUTOS = os.getenv("URL_API_VEHICLES")
 URL_API_SUCURSALES = os.getenv("URL_API_SUCURSALES")
 
 def get_vehiculos_from_api():
